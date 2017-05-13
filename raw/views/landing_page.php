@@ -74,7 +74,7 @@
 </nav>
 
 <!-- Header -->
-<header style="background-image:url(/assets/baked/freelancer/img/backhome.png) !important; size:1366x768">
+<header style="background-image:url(/assets/baked/freelancer/img/backhome.png) !important;">
     <div class="container" id="maincontent" tabindex="-1">
         <div class="row">
             <div class="col-lg-12">
@@ -234,21 +234,6 @@
                 <div class="footer-col col-md-4">
                     <h3></h3>
                     <ul class="list-inline">
-                        <li>
-                            <a href="#" class="btn-social btn-outline"><span class="sr-only"></span><i class="fa fa-fw fa-"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn-social btn-outline"><span class="sr-only"> </span><i class="fa fa-fw fa--"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn-social btn-outline"><span class="sr-only"></span><i class="fa fa-fw fa-"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn-social btn-outline"><span class="sr-only"> </span><i class="fa fa-fw fa-"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn-social btn-outline"><span class="sr-only"></span><i class="fa fa-fw fa-"></i></a>
-                        </li>
                     </ul>
                 </div>
                 <div class="footer-col col-md-4">
@@ -262,7 +247,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    &copy; konseling-bipolar.esy.es 2017
+                    &copy; Konseling Bipolar 2017
                 </div>
             </div>
         </div>
