@@ -92,7 +92,7 @@ unset($_categories);
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a class="_nav-a-link" href="<?php echo site_url('dashboard/jump?tab=dashboard') ?>">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Dashboard
@@ -110,7 +110,7 @@ unset($_categories);
                                 Rubah Profil
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="_nav-a-link" href="<?php echo site_url('inventory/jump?tab=inventory') ?>">
                                 <i class="glyphicon glyphicon-list"></i>
                                 Lihat Inventory
@@ -145,7 +145,7 @@ unset($_categories);
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Panel heading</div>
+                            <div class="panel-heading">Daftar Inventori</div>
                             <div class="panel-body">
                                 <div class="col-sm-2 col-sm-offset-10">
                                     <a class="btn btn-default" href="<?php echo site_url('inventory/add') ?>" role="button">Tambah Inventory</a>

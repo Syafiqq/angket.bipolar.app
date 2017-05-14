@@ -77,7 +77,7 @@ if (!isset($favourables))
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a class="_nav-a-link" href="<?php echo site_url('dashboard/jump?tab=dashboard') ?>">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Dashboard
@@ -101,7 +101,7 @@ if (!isset($favourables))
                                 Lihat Inventory
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="_nav-a-link" href="<?php echo site_url('inventory/jump?tab=inventory%2Fadd') ?>" target="_blank">
                                 <i class="glyphicon glyphicon-list"></i>
                                 Tambah

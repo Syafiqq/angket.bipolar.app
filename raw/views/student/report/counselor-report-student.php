@@ -80,7 +80,7 @@ if (!isset($reports))
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a class="_nav-a-link" href="<?php echo site_url('dashboard/jump?tab=dashboard') ?>">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Dashboard
@@ -117,7 +117,7 @@ if (!isset($reports))
                                 Aktivasi Siswa
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="_nav-a-link" href="<?php echo site_url('student/jump?tab=student%2Freport') ?>">
                                 <i class="glyphicon glyphicon-flag"></i>
                                 Lihat Nilai Siswa
@@ -133,9 +133,6 @@ if (!isset($reports))
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Panel heading</div>
-                            <div class="panel-body">
-                            </div>
                             <div class="table-responsive">
                                 <table id="report_tb" class="table table-hover">
                                     <thead>

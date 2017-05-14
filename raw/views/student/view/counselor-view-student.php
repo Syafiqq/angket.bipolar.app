@@ -85,7 +85,7 @@ if (!isset($window))
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a class="_nav-a-link" href="<?php echo site_url('dashboard/jump?tab=dashboard') ?>">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Dashboard
@@ -116,7 +116,7 @@ if (!isset($window))
                                 <i>Item</i>
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="_nav-a-link" href="<?php echo site_url('student/jump?tab=student') ?>">
                                 <i class="glyphicon glyphicon-flag"></i>
                                 Aktivasi Siswa

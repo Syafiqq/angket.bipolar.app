@@ -85,7 +85,7 @@ $profile['birth'] = (($profile['birthplace'] === '-') && ($profile['datebirth'] 
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a class="_nav-a-link" href="<?php echo site_url('dashboard/jump?tab=dashboard') ?>">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Dashboard
@@ -122,7 +122,7 @@ $profile['birth'] = (($profile['birthplace'] === '-') && ($profile['datebirth'] 
                                 Aktivasi Siswa
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="_nav-a-link" href="<?php echo site_url('student/jump?tab=student%2Freport') ?>">
                                 <i class="glyphicon glyphicon-flag"></i>
                                 Lihat Nilai Siswa

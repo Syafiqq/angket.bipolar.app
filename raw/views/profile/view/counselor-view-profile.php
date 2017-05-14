@@ -84,13 +84,13 @@ $profile['birth'] = (($profile['birthplace'] === '-') && ($profile['datebirth'] 
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a class="_nav-a-link" href="<?php echo site_url('dashboard/jump?tab=dashboard') ?>">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Dashboard
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="_nav-a-link" href="<?php echo site_url('profile/jump?tab=profile') ?>">
                                 <i class="glyphicon glyphicon-user"></i>
                                 Profil
