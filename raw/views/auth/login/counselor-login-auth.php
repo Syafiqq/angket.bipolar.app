@@ -36,85 +36,85 @@
     <script src="<?php echo base_url('/assets/js/vendor/modernizr-2.8.3.min.js') ?>"></script>
 </head>
 <body>
-<div class="container">
+<div class="jumbotron vertical-center">
+    <div class="container">
+        <form class="well form-horizontal" id="login" action="<?php echo site_url('auth/do_login') ?>" method="post">
+            <fieldset>
+                <!-- Form Name -->
+                <legend style="text-align: center">Login Konselor</legend>
 
-    <form class="well form-horizontal" id="login" action="<?php echo site_url('auth/do_login') ?>" method="post">
-        <fieldset>
-            <!-- Form Name -->
-            <legend>Contact Us Today!</legend>
-
-            <!-- Text input-->
-
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="credential">NIP/NIK</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="credential" placeholder="NIP/NIK" name="credential" type="number" class="form-control">
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="credential">NIP/NIK</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="credential" placeholder="NIP/NIK" name="credential" type="number" class="form-control">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Text input-->
+                <!-- Text input-->
 
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="password">Password</label>
-                <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="password">Password</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <input type="hidden" name="role" value="counselor">
+                <input type="hidden" name="role" value="counselor">
 
-            <!-- Button -->
-            <div class="form-group">
-                <label class="col-md-4 control-label"></label>
-                <div class="col-md-4">
-                    <button type="submit" class="btn btn-warning">Login
-                        <span class="glyphicon glyphicon-send"></span>
-                    </button>
+                <!-- Button -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-warning">Login
+                            <span class="glyphicon glyphicon-send"></span>
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group" style="margin-top: 50px">
-                <label class="col-md-4 control-label"></label>
-                <div class="col-md-4">
-                    <b>Klik</b>
-                    <a href="<?php echo site_url('/auth/login?role=student') ?>" type="submit" class="btn btn-warning">Siswa
-                        <span class="glyphicon glyphicon-send"></span>
-                    </a>
-                    <b>&nbsp;Apabila Anda Siswa ?</b>
+                <div class="form-group" style="margin-top: 50px">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <b>Klik</b>
+                        <a href="<?php echo site_url('/auth/login?role=student') ?>" type="submit" class="btn btn-warning">Siswa
+                            <span class="glyphicon glyphicon-send"></span>
+                        </a>
+                        <b>&nbsp;Apabila Anda Siswa ?</b>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group" style="margin-top: 20px">
-                <label class="col-md-4 control-label"></label>
-                <div class="col-md-4">
-                    <b>Klik</b>
-                    <a href="<?php echo site_url('/auth/register?role=counselor') ?>" type="submit" class="btn btn-warning">Daftar
-                        <span class="glyphicon glyphicon-send"></span>
-                    </a>
-                    <b>&nbsp;Apabila Belum Punya Akun ?</b>
+                <div class="form-group" style="margin-top: 20px">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <b>Klik</b>
+                        <a href="<?php echo site_url('/auth/register?role=counselor') ?>" type="submit" class="btn btn-warning">Daftar
+                            <span class="glyphicon glyphicon-send"></span>
+                        </a>
+                        <b>&nbsp;Apabila Belum Punya Akun ?</b>
+                    </div>
                 </div>
-            </div>
 
-            <div class="form-group" style="margin-top: 20px">
-                <label class="col-md-4 control-label"></label>
-                <div class="col-md-4">
-                    <b>Klik</b>
-                    <a href="<?php echo site_url('/auth/recover?role=counselor') ?>" type="submit" class="btn btn-warning">Lupa
-                        <span class="glyphicon glyphicon-send"></span>
-                    </a>
-                    <b>&nbsp;Apabila Anda Lupa ?</b>
+                <div class="form-group" style="margin-top: 20px">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <b>Klik</b>
+                        <a href="<?php echo site_url('/auth/recover?role=counselor') ?>" type="submit" class="btn btn-warning">Lupa
+                            <span class="glyphicon glyphicon-send"></span>
+                        </a>
+                        <b>&nbsp;Apabila Anda Lupa ?</b>
+                    </div>
                 </div>
-            </div>
 
-        </fieldset>
-    </form>
+            </fieldset>
+        </form>
+    </div>
 </div>
-<audio src="<?php echo base_url('/assets/audio/mp3/black_heaven.mp3') ?>" preload="auto" autoplay loop/>
+<audio src="<?php echo base_url('/assets/audio/mp3/black_heaven.mp3') ?>" preload="auto" autoplay loop></audio>
 
 <script src="<?php echo base_url('/assets/bower_components/jquery/dist/jquery.min.js') ?>"></script>
 <script>window.jQuery || document.write('<script src="<?php echo base_url('/assets/bower_components/jquery/dist/jquery.min.js') ?>"><\/script>')</script>
