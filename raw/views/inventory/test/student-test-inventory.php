@@ -21,6 +21,7 @@ if (!isset($questions))
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Inventory</title>
     <meta name="a temlplate" content="">
+    <meta property="uuid" content="<?php echo $profile['id'] ?>">
 
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('/apple-touch-icon.png') ?>">
     <!-- Place favicon.ico in the root directory -->
@@ -34,6 +35,7 @@ if (!isset($questions))
     <link href="<?php echo base_url('/assets/bower_components/datatables-autofill-bootstrap/css/autoFill.bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('/assets/bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('/assets/bower_components/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('/assets/bower_components/bootstrap3_player/css/bootstrap3_player.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('/assets/css/inventory/test/student-test-inventory.min.css') ?>" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -72,7 +74,7 @@ if (!isset($questions))
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a class="_nav-a-link" href="<?php echo site_url('dashboard/jump?tab=dashboard') ?>">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Dashboard
@@ -96,7 +98,7 @@ if (!isset($questions))
                                 Lihat Inventory
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="_nav-a-link" href="<?php echo site_url('inventory/jump?tab=inventory%2Ftest') ?>" target="_blank">
                                 <i class="glyphicon glyphicon-list"></i>
                                 Pengerjaan
@@ -116,56 +118,98 @@ if (!isset($questions))
         <div class="col-md-9">
             <div class="profile-content">
                 <div class="row">
-                    <form id="test" action="<?php echo site_url('inventory/do_calculate') ?>" method="post" class="form-horizontal">
-                        <div class="table table-responsive">
-                            <table id="inventory_test" class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th style="width: 40px">No</th>
-                                    <th>Pertanyaan</th>
-                                    <th class="_mini-text" style="width: 50px">TS
-                                    </th>
-                                    <th class="_mini-text" style="width: 50px">KS
-                                    </th>
-                                    <th class="_mini-text" style="width: 50px">S
-                                    </th>
-                                    <th class="_mini-text" style="width: 50px">SS
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $_no = 0;
-                                foreach ($questions as $no => $question)
-                                {
-                                    ++$_no;
-                                    $id = "q{$question['id']}";
-                                    echo '<tr>';
-                                    echo "<td>{$_no}</td>";
-                                    echo "<td>{$question['question']}</td>";
-                                    foreach ($options as $ko => $option)
-                                    {
-                                        $checked = $ko == 0 ? 'checked' : '';
-                                        echo "<td><div class=\"radio\"><label><input type=\"radio\" name=\"question[{$id}]\" value=\"{$option['id']}\" aria-label=\"{$option['id']}\" {$checked}></label></div></td>";
-                                    }
-                                    echo '</tr>';
-                                }
-                                ?>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 20px">
-                                <button type="submit" class="btn btn-default">Selesai</button>
+                    <div class="col-sm-12">
+                        <div class="row" style="margin-bottom: 8px">
+                            <div class="col-sm-12">
+                                <button id="save" type="submit" class="btn btn-default">Simpan Sementara</button>
                             </div>
                         </div>
-                    </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form id="test" action="<?php echo site_url('inventory/do_calculate') ?>" method="post" class="form-horizontal">
+                            <div class="table table-responsive">
+                                <table id="inventory_test" class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 40px">No</th>
+                                        <th>Pertanyaan</th>
+                                        <th class="_mini-text" style="width: 50px">TS
+                                        </th>
+                                        <th class="_mini-text" style="width: 50px">KS
+                                        </th>
+                                        <th class="_mini-text" style="width: 50px">S
+                                        </th>
+                                        <th class="_mini-text" style="width: 50px">SS
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    $_no = 0;
+                                    foreach ($questions as $no => $question)
+                                    {
+                                        ++$_no;
+                                        $id = "q{$question['id']}";
+                                        echo '<tr>';
+                                        echo "<td>{$_no}</td>";
+                                        echo "<td>{$question['question']}</td>";
+                                        foreach ($options as $ko => $option)
+                                        {
+                                            $checked = $ko == 0 ? '' : '';
+                                            echo "<td><div class=\"radio\"><label><input type=\"radio\" name=\"question[{$id}]\" value=\"{$option['id']}\" aria-label=\"{$option['id']}\" {$checked}></label></div></td>";
+                                        }
+                                        echo '</tr>';
+                                    }
+                                    ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 20px">
+                                    <button type="submit" class="btn btn-default">Selesai</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<audio src="<?php echo base_url('/assets/audio/mp3/black_heaven.mp3') ?>" preload="auto" autoplay loop/>
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="navbar-header">
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <div class="_cs-audio">
+                        <audio preload id="music" controls="controls">Browser anda tidak support untuk memutar Musik</audio>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Daftar Musik
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <ol id="plList">
+                                <li data-audio="<?php echo base_url('/assets/audio/mp3/music1.mp3') ?>">Musik 1</li>
+                                <li data-audio="<?php echo base_url('/assets/audio/mp3/music2.mp3') ?>">Musik 2</li>
+                                <li data-audio="<?php echo base_url('/assets/audio/mp3/music3.mp3') ?>">Musik 3</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</div>
 
 <script src="<?php echo base_url('/assets/bower_components/jquery/dist/jquery.min.js') ?>"></script>
 <script>window.jQuery || document.write('<script src="<?php echo base_url('/assets/bower_components/jquery/dist/jquery.min.js') ?>"><\/script>')</script>
@@ -182,7 +226,8 @@ if (!isset($questions))
 <script type="text/javascript" src="<?php echo base_url('/assets/bower_components/datatables.net-buttons/js/dataTables.buttons.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('/assets/bower_components/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('/assets/bower_components/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') ?>"></script>
-<script src="<?php echo base_url('/assets/bower_components/audiojs/audiojs/audio.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/bower_components/bootstrap3_player/js/bootstrap3_player.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/bower_components/js-cookie/src/js.cookie.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('/assets/js/inventory/test/student-test-inventory.min.js') ?>"></script>
 </body>
 </html>

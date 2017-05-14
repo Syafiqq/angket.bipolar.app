@@ -67,6 +67,7 @@ $counselor['head_credential'] = $counselor['head_credential'] === null ? '-' : $
     <link rel="stylesheet" href="<?php echo base_url('/assets/css/main.min.css') ?>">
 
     <link href="<?php echo base_url('/assets/bower_components/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('/assets/bower_components/bootstrap3_player/css/bootstrap3_player.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('/assets/css/report/publish/counselor-publish-report.min.css') ?>" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -152,7 +153,7 @@ $counselor['head_credential'] = $counselor['head_credential'] === null ? '-' : $
         <div class="row vertical-align">
             <div class="col-sm-12 text-center">
                 <p id="content_welcome" class="margin-bottom-4" style="font-weight: bold; font-size: 20px">LAPORAN HASIL INVENTORI</p>
-                <p id="content_title" style="font-weight: bolder; font-size: 20px; margin: 4px">BERPIKIR KRITIS AKADEMIK</p>
+                <p id="content_title" style="font-weight: bolder; font-size: 20px; margin: 4px">BIPOLAR</p>
             </div>
         </div>
         <div class="row">
@@ -276,7 +277,7 @@ $counselor['head_credential'] = $counselor['head_credential'] === null ? '-' : $
             <div class="col-sm-1 ">
             </div>
             <div class="col-sm-4 no-padding-side">
-                <p class="margin-bottom-2">Kepala Sekolah SMA <?php echo $counselor['school'] ?></p>
+                <p class="margin-bottom-2">Kepala Sekolah <?php echo $counselor['school'] ?></p>
             </div>
             <div class="col-sm-3 ">
             </div>

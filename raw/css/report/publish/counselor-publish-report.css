@@ -55,6 +55,7 @@ body {
 
 #print_container {
     width: inherit;
+    height: 100%;
     padding: .5cm;
     -webkit-print-color-adjust: exact;
     background: url("/assets/img/avatar/logo/watermark_transparent.png") no-repeat center;

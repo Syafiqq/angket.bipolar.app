@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="<?php echo base_url('/assets/css/main.min.css') ?>">
 
     <link href="<?php echo base_url('/assets/bower_components/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('/assets/bower_components/bootstrap3_player/css/bootstrap3_player.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('/assets/css/dashboard/view/counselor-view-dashboard.min.css') ?>" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -46,13 +47,13 @@
             <div class="profile-sidebar">
                 <!-- SIDEBAR USERPIC -->
                 <div class="profile-userpic">
-                    <img src="<?php echo base_url($profile['avatar'])?>" class="img-responsive" alt="">
+                    <img src="<?php echo base_url($profile['avatar']) ?>" class="img-responsive" alt="">
                 </div>
                 <!-- END SIDEBAR USERPIC -->
                 <!-- SIDEBAR USER TITLE -->
                 <div class="profile-usertitle">
                     <div class="profile-usertitle-name">
-                        <?php echo $profile['name']?>
+                        <?php echo $profile['name'] ?>
                     </div>
                     <div class="profile-usertitle-job">
                         KONSELOR
@@ -61,7 +62,7 @@
                 <!-- END SIDEBAR USER TITLE -->
                 <!-- SIDEBAR BUTTONS -->
                 <div class="profile-userbuttons">
-                    <a id="logout"  type="button" class="btn btn-danger btn-sm" href="<?php echo site_url('auth/do_logout') ?>">Logout</a>
+                    <a id="logout" type="button" class="btn btn-danger btn-sm" href="<?php echo site_url('auth/do_logout') ?>">Logout</a>
                 </div>
                 <!-- END SIDEBAR BUTTONS -->
                 <!-- SIDEBAR MENU -->
@@ -94,7 +95,8 @@
                         <li>
                             <a class="_nav-a-link" href="<?php echo site_url('inventory/jump?tab=inventory%2Fadd') ?>" target="_blank">
                                 <i class="glyphicon glyphicon-list"></i>
-                                Tambah <i>Item</i>
+                                Tambah
+                                <i>Item</i>
                             </a>
                         </li>
                         <li>
@@ -118,7 +120,36 @@
             <div class="profile-content">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <button id="coupon_generator" class="btn btn-default" data-coupon-action="<?php echo site_url('dashboard/do_generate_coupon') ?>" type="button">Generate Kode Pendaftaran</button>
+                        <h1>Selamat Datang</h1>
+                        <h3>
+                            Selamat datang di Inventori Bipolar
+                        </h3>
+                        <ul>
+                            <li style="padding: 2px">Klik
+                                <a class="btn btn-default _nav-a-link" href="<?php echo site_url('inventory/jump?tab=inventory') ?>">
+                                    <b>Inventory</b>
+                                </a>
+                                                     &nbsp;untuk memulai memodifikasi angket
+                            </li>
+                            <li style="padding: 2px">Klik
+                                <a class="btn btn-default _nav-a-link" href="<?php echo site_url('student/jump?tab=student') ?>">
+                                    <b>Siswa</b>
+                                </a>
+                                                     &nbsp;untuk melihat daftar siswa
+                            </li>
+                            <li style="padding: 2px">Klik
+                                <a class="btn btn-default _nav-a-link" href="<?php echo site_url('student/jump?tab=student%2Freport') ?>">
+                                    <b>Laporan</b>
+                                </a>
+                                                     &nbsp;untuk melihat laporan siswa
+                            </li>
+                            <li style="padding: 2px">Klik
+                                <button id="coupon_generator" class="btn btn-default" data-coupon-action="<?php echo site_url('dashboard/do_generate_coupon') ?>" type="button">
+                                    <b>Generate Kode Registrasi</b>
+                                </button>
+                                                     &nbsp;untuk men-generate kode registrasi pendaftaran
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -126,7 +157,38 @@
     </div>
 </div>
 
-<audio src="<?php echo base_url('/assets/audio/mp3/black_heaven.mp3') ?>" preload="auto" autoplay loop/>
+<div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="navbar-header">
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <div class="_cs-audio">
+                        <audio preload id="music" controls="controls">Browser anda tidak support untuk memutar Musik</audio>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Daftar Musik
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <ol id="plList">
+                                <li data-audio="<?php echo base_url('/assets/audio/mp3/music1.mp3') ?>">Musik 1</li>
+                                <li data-audio="<?php echo base_url('/assets/audio/mp3/music2.mp3') ?>">Musik 2</li>
+                                <li data-audio="<?php echo base_url('/assets/audio/mp3/music3.mp3') ?>">Musik 3</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</div>
 
 <script src="<?php echo base_url('/assets/bower_components/jquery/dist/jquery.min.js') ?>"></script>
 <script>window.jQuery || document.write('<script src="<?php echo base_url('/assets/bower_components/jquery/dist/jquery.min.js') ?>"><\/script>')</script>
@@ -135,7 +197,7 @@
 <script src="<?php echo base_url('/assets/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('/assets/bower_components/tether/dist/js/tether.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('/assets/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js') ?>"></script>
-<script src="<?php echo base_url('/assets/bower_components/audiojs/audiojs/audio.min.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/bower_components/bootstrap3_player/js/bootstrap3_player.js') ?>"></script>
 <script src="<?php echo base_url('/assets/js/dashboard/view/counselor-view-dashboard.min.js') ?>"></script>
 </body>
 </html>
