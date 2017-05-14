@@ -103,7 +103,7 @@ $answered['answer_at'] = Carbon::createFromFormat('Y-m-d H:i:s', $answered['answ
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a class="_nav-a-link" href="<?php echo site_url('dashboard/jump?tab=dashboard') ?>">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Dashboard
@@ -133,7 +133,7 @@ $answered['answer_at'] = Carbon::createFromFormat('Y-m-d H:i:s', $answered['answ
                                 Pengerjaan
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="_nav-a-link" href="<?php echo site_url('inventory/jump?tab=inventory%2Fresult') ?>" target="_blank">
                                 <i class="glyphicon glyphicon-list"></i>
                                 Hasil

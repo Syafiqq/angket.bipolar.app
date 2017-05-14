@@ -81,7 +81,7 @@ $profile['datebirth'] = $profile['datebirth'] === null ? null : $profile['datebi
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a class="_nav-a-link" href="<?php echo site_url('dashboard/jump?tab=dashboard') ?>">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Dashboard
@@ -93,7 +93,7 @@ $profile['datebirth'] = $profile['datebirth'] === null ? null : $profile['datebi
                                 Profil
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="_nav-a-link" href="<?php echo site_url('profile/jump?tab=profile%2Fedit') ?>">
                                 <i class="glyphicon glyphicon-user"></i>
                                 Rubah Profil

@@ -83,7 +83,7 @@ if (!isset($categories))
                 <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu">
                     <ul class="nav">
-                        <li class="active">
+                        <li>
                             <a class="_nav-a-link" href="<?php echo site_url('dashboard/jump?tab=dashboard') ?>">
                                 <i class="glyphicon glyphicon-home"></i>
                                 Dashboard
@@ -113,7 +113,7 @@ if (!isset($categories))
                                 Pengerjaan
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="_nav-a-link" href="<?php echo site_url('inventory/jump?tab=inventory%2Fresult') ?>" target="_blank">
                                 <i class="glyphicon glyphicon-list"></i>
                                 Hasil
@@ -129,9 +129,6 @@ if (!isset($categories))
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading">Panel heading</div>
-                            <div class="panel-body">
-                            </div>
                             <div class="table-responsive">
                                 <table id="result_tb" class="table table-hover">
                                     <thead>
