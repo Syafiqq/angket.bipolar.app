@@ -58,6 +58,8 @@
     "datatables.net-responsive": "^2.1.1",
     "datatables.net-rowgroup-bs": "^1.0.0",
     "datatables.net-rowreorder": "^1.2.0",
-    "jquery-backstretch": "^2.1.15"
+    "jquery-backstretch": "^2.1.15",
+    "bootstrap3_player": "https://github.com/iainhouston/bootstrap3_player.git",
+    "js-cookie": "^2.1.4"
   }
 }
