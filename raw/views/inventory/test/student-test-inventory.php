@@ -21,6 +21,7 @@ if (!isset($questions))
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Inventory</title>
     <meta name="a temlplate" content="">
+    <meta property="uuid" content="<?php echo $profile['id'] ?>">
 
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('/apple-touch-icon.png') ?>">
     <!-- Place favicon.ico in the root directory -->
@@ -117,50 +118,61 @@ if (!isset($questions))
         <div class="col-md-9">
             <div class="profile-content">
                 <div class="row">
-                    <form id="test" action="<?php echo site_url('inventory/do_calculate') ?>" method="post" class="form-horizontal">
-                        <div class="table table-responsive">
-                            <table id="inventory_test" class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th style="width: 40px">No</th>
-                                    <th>Pertanyaan</th>
-                                    <th class="_mini-text" style="width: 50px">TS
-                                    </th>
-                                    <th class="_mini-text" style="width: 50px">KS
-                                    </th>
-                                    <th class="_mini-text" style="width: 50px">S
-                                    </th>
-                                    <th class="_mini-text" style="width: 50px">SS
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $_no = 0;
-                                foreach ($questions as $no => $question)
-                                {
-                                    ++$_no;
-                                    $id = "q{$question['id']}";
-                                    echo '<tr>';
-                                    echo "<td>{$_no}</td>";
-                                    echo "<td>{$question['question']}</td>";
-                                    foreach ($options as $ko => $option)
-                                    {
-                                        $checked = $ko == 0 ? 'checked' : '';
-                                        echo "<td><div class=\"radio\"><label><input type=\"radio\" name=\"question[{$id}]\" value=\"{$option['id']}\" aria-label=\"{$option['id']}\" {$checked}></label></div></td>";
-                                    }
-                                    echo '</tr>';
-                                }
-                                ?>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 20px">
-                                <button type="submit" class="btn btn-default">Selesai</button>
+                    <div class="col-sm-12">
+                        <div class="row" style="margin-bottom: 8px">
+                            <div class="col-sm-12">
+                                <button id="save" type="submit" class="btn btn-default">Simpan Sementara</button>
                             </div>
                         </div>
-                    </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form id="test" action="<?php echo site_url('inventory/do_calculate') ?>" method="post" class="form-horizontal">
+                            <div class="table table-responsive">
+                                <table id="inventory_test" class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 40px">No</th>
+                                        <th>Pertanyaan</th>
+                                        <th class="_mini-text" style="width: 50px">TS
+                                        </th>
+                                        <th class="_mini-text" style="width: 50px">KS
+                                        </th>
+                                        <th class="_mini-text" style="width: 50px">S
+                                        </th>
+                                        <th class="_mini-text" style="width: 50px">SS
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    $_no = 0;
+                                    foreach ($questions as $no => $question)
+                                    {
+                                        ++$_no;
+                                        $id = "q{$question['id']}";
+                                        echo '<tr>';
+                                        echo "<td>{$_no}</td>";
+                                        echo "<td>{$question['question']}</td>";
+                                        foreach ($options as $ko => $option)
+                                        {
+                                            $checked = $ko == 0 ? '' : '';
+                                            echo "<td><div class=\"radio\"><label><input type=\"radio\" name=\"question[{$id}]\" value=\"{$option['id']}\" aria-label=\"{$option['id']}\" {$checked}></label></div></td>";
+                                        }
+                                        echo '</tr>';
+                                    }
+                                    ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-bottom: 20px">
+                                    <button type="submit" class="btn btn-default">Selesai</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -215,6 +227,7 @@ if (!isset($questions))
 <script type="text/javascript" src="<?php echo base_url('/assets/bower_components/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('/assets/bower_components/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('/assets/bower_components/bootstrap3_player/js/bootstrap3_player.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('/assets/bower_components/js-cookie/src/js.cookie.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('/assets/js/inventory/test/student-test-inventory.min.js') ?>"></script>
 </body>
 </html>
