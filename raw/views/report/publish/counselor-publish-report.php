@@ -86,7 +86,7 @@ $counselor['head_credential'] = $counselor['head_credential'] === null ? '-' : $
 </head>
 <body>
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -95,25 +95,14 @@ $counselor['head_credential'] = $counselor['head_credential'] === null ? '-' : $
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo site_url('dashboard') ?>">Site</a>
+            <a class="navbar-brand" href="<?php echo site_url('dashboard') ?>">Bipolar</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="<?php echo site_url('inventory') ?>">Inventory</a>
-                </li>
-                <li>
-                    <a href="<?php echo site_url('student') ?>">Siswa</a>
-                </li>
-            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a id="logout" href="<?php echo site_url('auth/do_logout') ?>">Logout</a>
-                </li>
-                <li>
-                    <a href="<?php echo site_url('profile') ?>">Profile</a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -241,7 +230,9 @@ $counselor['head_credential'] = $counselor['head_credential'] === null ? '-' : $
                         if ($isBold)
                         {
                             echo '<tr>';
-                            echo "<td class=\"font-size-12px text-center {$isBold}\">{$vg['interval']['value']}</td>";
+                            echo "<td class=\"font-size-12px text-center {$isBold}\">";
+                            printf("%.4g%%", $result['value']);
+                            echo "</td>";
                             echo "<td class=\"font-size-12px text-center {$isBold}\">{$vg['class']}</td>";
                             echo "<td class=\"font-size-12px {$isBold}\">";
                             echo "<b>{$vg['interpretation']['key']}</b><ol>";
