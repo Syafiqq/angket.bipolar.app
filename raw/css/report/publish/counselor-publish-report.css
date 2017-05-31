@@ -46,6 +46,7 @@ body {
 #header_department {
     font-weight: bold;
     font-size: 16px;
+    text-align: center;
 }
 
 #secret {
@@ -55,29 +56,33 @@ body {
 
 #print_container {
     width: inherit;
-    height: 100%;
     padding: .5cm;
     -webkit-print-color-adjust: exact;
     background: url("/assets/img/avatar/logo/watermark_transparent.png") no-repeat center;
     background-size: 7.5cm;
+    height: 100%;
 }
 
 #header_university {
     font-weight: bold;
     font-size: 16px;
+    text-align: center;
 }
 
 #header_faculty {
     font-weight: bold;
     font-size: 16px;
+    text-align: center;
 }
 
 #header_u_address {
     font-size: 16px;
+    text-align: center;
 }
 
 #header_u_desc {
     font-size: 16px;
+    text-align: center;
 }
 
 .vertical-align {
@@ -142,7 +147,6 @@ page[size="A5"][layout="portrait"] {
 .margin-bottom-4 {
     margin-bottom: 4px;
 }
-
 
 .margin-left-1-cm {
     margin-left: 1cm;
@@ -247,6 +251,7 @@ page[size="A5"][layout="portrait"] {
     #header_department {
         font-weight: bold;
         font-size: 16px;
+        text-align: center;
     }
 
     #secret {
@@ -259,24 +264,29 @@ page[size="A5"][layout="portrait"] {
         padding: .5cm;
         background: url("/assets/img/avatar/logo/watermark_transparent.png") no-repeat center !important;
         background-size: 7.5cm !important;
+        height: 100%;
     }
 
     #header_university {
         font-weight: bold;
         font-size: 16px;
+        text-align: center;
     }
 
     #header_faculty {
         font-weight: bold;
         font-size: 16px;
+        text-align: center;
     }
 
     #header_u_address {
         font-size: 16px;
+        text-align: center;
     }
 
     #header_u_desc {
         font-size: 16px;
+        text-align: center;
     }
 
     .vertical-align {
