@@ -15,15 +15,15 @@ if (!isset($profile))
     $profile = [];
 }
 
-$profile['gender'] = $profile['gender'] === 'male' ? 'Laki Laki' : 'Perempuan';
-$profile['address'] = $profile['address'] === null ? '-' : $profile['address'];
-$profile['school'] = $profile['school'] === null ? '-' : $profile['school'];
-$profile['school_address'] = $profile['school_address'] === null ? '-' : $profile['school_address'];
-$profile['head'] = $profile['head'] === null ? '-' : $profile['head'];
+$profile['gender']          = $profile['gender'] === 'male' ? 'Laki Laki' : 'Perempuan';
+$profile['address']         = $profile['address'] === null ? '-' : $profile['address'];
+$profile['school']          = $profile['school'] === null ? '-' : $profile['school'];
+$profile['school_address']  = $profile['school_address'] === null ? '-' : $profile['school_address'];
+$profile['head']            = $profile['head'] === null ? '-' : $profile['head'];
 $profile['head_credential'] = $profile['head_credential'] === null ? '-' : $profile['head_credential'];
-$profile['birthplace'] = $profile['birthplace'] === null ? '-' : $profile['birthplace'];
-$profile['datebirth'] = $profile['datebirth'] === null ? '-' : Carbon::createFromFormat('Y-m-d', $profile['datebirth'])->formatLocalized('%d %B %Y');
-$profile['birth'] = (($profile['birthplace'] === '-') && ($profile['datebirth'] === '-')) ? '-' : (($profile['birthplace'] === '-') ? $profile['datebirth'] : (($profile['datebirth'] === '-') ? $profile['birthplace'] : "{$profile['birthplace']}, {$profile['datebirth']}"));
+$profile['birthplace']      = $profile['birthplace'] === null ? '-' : $profile['birthplace'];
+$profile['datebirth']       = $profile['datebirth'] === null ? '-' : Carbon::createFromFormat('Y-m-d', $profile['datebirth'])->formatLocalized('%d %B %Y');
+$profile['birth']           = (($profile['birthplace'] === '-') && ($profile['datebirth'] === '-')) ? '-' : (($profile['birthplace'] === '-') ? $profile['datebirth'] : (($profile['datebirth'] === '-') ? $profile['birthplace'] : "{$profile['birthplace']}, {$profile['datebirth']}"));
 ?>
 
 

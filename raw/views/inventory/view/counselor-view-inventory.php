@@ -182,7 +182,7 @@ unset($_categories);
                                         foreach ($favourables as $favourable)
                                         {
                                             $favourable['description'] = ucfirst($favourable['description']);
-                                            $selected = $favourable['id'] === $question['favour'] ? 'selected' : '';
+                                            $selected                  = $favourable['id'] === $question['favour'] ? 'selected' : '';
                                             echo "<option value=\"{$favourable['id']}\" {$selected}>{$favourable['description']}</option>";
                                         }
                                         echo '</select>';

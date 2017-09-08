@@ -6,6 +6,7 @@
  * Email        : syafiq.rezpector@gmail.com
  * Github       : syafiqq
  */
+
 use Carbon\Carbon;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -55,8 +56,8 @@ class Inventory extends CI_Controller
             {
                 $this->load->model('minventory', 'inventory');
                 $favourables = $this->inventory->getFavourable();
-                $categories = $this->inventory->getCategory();
-                $questions = $this->inventory->getQuestion();
+                $categories  = $this->inventory->getCategory();
+                $questions   = $this->inventory->getQuestion();
                 $this->load->view('inventory/view/counselor-view-inventory', compact('favourables', 'categories', 'questions', 'profile'));
 
                 return;
@@ -64,7 +65,7 @@ class Inventory extends CI_Controller
             case 'student' :
             {
                 $this->load->helper('identity_checking');
-                $b_test = $this->allowedToTakeTest();
+                $b_test     = $this->allowedToTakeTest();
                 $b_complete = isStudentIdentityIsComplete($_SESSION['user']['auth']);
                 $this->load->view('inventory/view/student-view-inventory', compact('b_test', 'b_complete', 'profile'));
 
@@ -129,7 +130,7 @@ class Inventory extends CI_Controller
                 {
                     $this->load->model('minventory', 'inventory');
                     $questions = $this->inventory->getQuestionByActive(1);
-                    $options = $this->inventory->getOptions();
+                    $options   = $this->inventory->getOptions();
                     $this->load->view('inventory/test/student-test-inventory', compact('questions', 'options', 'profile'));
                 }
                 else
@@ -156,13 +157,13 @@ class Inventory extends CI_Controller
             case 'student' :
             {
                 $this->load->model('minventory', 'inventory');
-                $_answered = $this->inventory->getAnsweredUser($_SESSION['user']['auth']['id']);
-                $answered = [];
-                $result = $this->inventory->getAnsweredResultByUser($_SESSION['user']['auth']['id']);
+                $_answered  = $this->inventory->getAnsweredUser($_SESSION['user']['auth']['id']);
+                $answered   = [];
+                $result     = $this->inventory->getAnsweredResultByUser($_SESSION['user']['auth']['id']);
                 $categories = $this->inventory->getCategory();
                 foreach ($_answered as $av)
                 {
-                    $answered[".{$av['id']}"] = $av;
+                    $answered[".{$av['id']}"]             = $av;
                     $answered[".{$av['id']}"]['category'] = [];
                     foreach ($categories as $cv)
                     {
@@ -191,7 +192,7 @@ class Inventory extends CI_Controller
             case 'counselor' :
             {
                 $this->load->model('minventory', 'inventory');
-                $categories = $this->inventory->getCategory();
+                $categories  = $this->inventory->getCategory();
                 $favourables = $this->inventory->getFavourable();
                 $this->load->view('inventory/add/counselor-add-inventory', compact('categories', 'favourables', 'profile'));
 
@@ -218,8 +219,8 @@ class Inventory extends CI_Controller
                 $question = $this->inventory->getQuestionByID($id);
                 if (count($question) > 0)
                 {
-                    $question = $question[0];
-                    $categories = $this->inventory->getCategory();
+                    $question    = $question[0];
+                    $categories  = $this->inventory->getCategory();
                     $favourables = $this->inventory->getFavourable();
                     $this->load->view('inventory/edit/counselor-edit-inventory', compact('categories', 'favourables', 'question', 'profile'));
                 }
@@ -368,7 +369,7 @@ class Inventory extends CI_Controller
         {
             $this->load->model('minventory', 'inventory');
             $_questions = $this->inventory->getQuestion();
-            $question = [];
+            $question   = [];
             foreach ($_questions as $q)
             {
                 $question["q{$q['id']}"] = $q;
@@ -393,19 +394,19 @@ class Inventory extends CI_Controller
                 $options = $this->inventory->getOptions();
 
                 //Answered Question
-                $aq = $_SESSION['user']['auth']['id'];
+                $aq  = $_SESSION['user']['auth']['id'];
                 $raq = $this->inventory->addAnsweredUser($aq);
 
                 //Answered Detail
                 $ad = [];
                 foreach ($_POST['question'] as $k => $q)
                 {
-                    $_ad = [];
+                    $_ad              = [];
                     $_ad['answer_id'] = $raq;
-                    $_ad['question'] = $question[$k]['id'];
-                    $_ad['answer'] = $q;
-                    $_ad['favour'] = $question[$k]['favour'];
-                    $_ad['scale'] = count($options);
+                    $_ad['question']  = $question[$k]['id'];
+                    $_ad['answer']    = $q;
+                    $_ad['favour']    = $question[$k]['favour'];
+                    $_ad['scale']     = count($options);
                     array_push($ad, $_ad);
                 }
                 $this->inventory->addAnswerDetail($ad);
@@ -416,12 +417,12 @@ class Inventory extends CI_Controller
                     $ad[$k]['category'] = $question["q{$v['question']}"]['category'];
                 }
                 $_categories = $this->inventory->getCategory();
-                $ar = [];
+                $ar          = [];
                 foreach ($_categories as $c)
                 {
                     $ar[".{$c['id']}"]['answer_id'] = $raq;
-                    $ar[".{$c['id']}"]['category'] = $c['id'];
-                    $ar[".{$c['id']}"]['value'] = 0;
+                    $ar[".{$c['id']}"]['category']  = $c['id'];
+                    $ar[".{$c['id']}"]['value']     = 0;
                 }
                 unset($_categories);
 
@@ -470,17 +471,17 @@ class Inventory extends CI_Controller
                             {
                                 echo apiMakeCallback(API_SUCCESS, "Jump To [{$path}]", [], site_url("/{$path}"));
                             }
-                                break;
+                            break;
                             case 'inventory/add' :
                             {
                                 echo apiMakeCallback(API_SUCCESS, "Jump To [{$path}]", [], site_url("/{$path}"));
                             }
-                                break;
+                            break;
                             default:
                             {
                                 echo apiMakeCallback(API_BAD_REQUEST, 'Permintaan Tidak Dapat Dikenali', ['notify' => [['Permintaan Tidak Dapat Dikenali', 'danger']]]);
                             }
-                                break;
+                            break;
                         }
 
                         return;
@@ -493,7 +494,7 @@ class Inventory extends CI_Controller
                             {
                                 echo apiMakeCallback(API_SUCCESS, "Jump To [{$path}]", [], site_url("/{$path}"));
                             }
-                                break;
+                            break;
                             case 'inventory/test' :
                             {
                                 $this->load->helper('identity_checking');
@@ -515,7 +516,7 @@ class Inventory extends CI_Controller
                                     echo apiMakeCallback(API_NOT_ACCEPTABLE, 'Access Denied', ['notify' => [['Anda Tidak Diperkenankan Mengerjakan<br> Silahkan Hubungi Konselor Anda', 'info']]]);
                                 }
                             }
-                                break;
+                            break;
                             case 'inventory/result' :
                             {
                                 $this->load->model('minventory', 'inventory');
@@ -529,12 +530,12 @@ class Inventory extends CI_Controller
                                     echo apiMakeCallback(API_NOT_ACCEPTABLE, 'Access Denied', ['notify' => [['Anda belum memiliki data', 'info']]]);
                                 }
                             }
-                                break;
+                            break;
                             default:
                             {
                                 echo apiMakeCallback(API_BAD_REQUEST, 'Permintaan Tidak Dapat Dikenali', ['notify' => [['Permintaan Tidak Dapat Dikenali', 'danger']]]);
                             }
-                                break;
+                            break;
                         }
 
                         return;

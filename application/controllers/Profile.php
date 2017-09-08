@@ -58,7 +58,7 @@ class Profile extends CI_Controller
                 $this->load->model('minventory', 'inventory');
                 $have_entry = $this->inventory->getAnsweredUser($_SESSION['user']['auth']['id']);
                 $have_entry = count($have_entry) > 0;
-                $profile = $_SESSION['user']['auth'];
+                $profile    = $_SESSION['user']['auth'];
                 $this->load->view('profile/view/student-view-profile', compact('profile', 'have_entry'));
 
                 return;
@@ -81,7 +81,7 @@ class Profile extends CI_Controller
                 $this->load->model('minventory', 'inventory');
                 $have_entry = $this->inventory->getAnsweredUser($_SESSION['user']['auth']['id']);
                 $have_entry = count($have_entry) > 0;
-                $profile = $_SESSION['user']['auth'];
+                $profile    = $_SESSION['user']['auth'];
                 $this->load->view('profile/edit/student-edit-profile', compact('profile', 'have_entry'));
 
                 return;
@@ -109,13 +109,13 @@ class Profile extends CI_Controller
                         {
                             $this->auth->updateAvatarCounselorByID($_SESSION['user']['auth']['id'], $dest);
 
-                            break;
+                        break;
                         }
                         case 'student' :
                         {
                             $this->auth->updateAvatarStudentByID($_SESSION['user']['auth']['id'], $dest);
 
-                            break;
+                        break;
                         }
                     }
                     $_SESSION['user']['auth']['avatar'] = $dest;
@@ -159,22 +159,22 @@ class Profile extends CI_Controller
                     case 'counselor' :
                     {
                         $this->auth->updateAdditionalCounselorByID($_SESSION['user']['auth']['id'], $_POST['school'], $_POST['school_address'], $_POST['head'], $_POST['head_credential'], $_POST['address'], $_POST['birthplace'], $_POST['datebirth']);
-                        $_SESSION['user']['auth']['school_address'] = $_POST['school_address'];
-                        $_SESSION['user']['auth']['head'] = $_POST['head'];
+                        $_SESSION['user']['auth']['school_address']  = $_POST['school_address'];
+                        $_SESSION['user']['auth']['head']            = $_POST['head'];
                         $_SESSION['user']['auth']['head_credential'] = $_POST['head_credential'];
-                        break;
+                    break;
                     }
                     case 'student' :
                     {
                         $this->auth->updateAdditionalStudentByID($_SESSION['user']['auth']['id'], $_POST['school'], $_POST['grade'], $_POST['address'], $_POST['birthplace'], $_POST['datebirth']);
                         $_SESSION['user']['auth']['grade'] = $_POST['grade'];
-                        break;
+                    break;
                     }
                 }
-                $_SESSION['user']['auth']['address'] = $_POST['address'];
+                $_SESSION['user']['auth']['address']    = $_POST['address'];
                 $_SESSION['user']['auth']['birthplace'] = $_POST['birthplace'];
-                $_SESSION['user']['auth']['datebirth'] = $_POST['datebirth'];
-                $_SESSION['user']['auth']['school'] = $_POST['school'];
+                $_SESSION['user']['auth']['datebirth']  = $_POST['datebirth'];
+                $_SESSION['user']['auth']['school']     = $_POST['school'];
                 echo apiMakeCallback(API_SUCCESS, 'Update Berhasil', ['notify' => [['Update Berhasil', 'success']]], site_url('profile'));
             }
             else
@@ -205,17 +205,17 @@ class Profile extends CI_Controller
                             {
                                 echo apiMakeCallback(API_SUCCESS, "Jump To [{$path}]", [], site_url("/{$path}"));
                             }
-                                break;
+                            break;
                             case 'profile/edit' :
                             {
                                 echo apiMakeCallback(API_SUCCESS, "Jump To [{$path}]", [], site_url("/{$path}"));
                             }
-                                break;
+                            break;
                             default:
                             {
                                 echo apiMakeCallback(API_BAD_REQUEST, 'Permintaan Tidak Dapat Dikenali', ['notify' => [['Permintaan Tidak Dapat Dikenali', 'danger']]]);
                             }
-                                break;
+                            break;
                         }
 
                         return;
@@ -228,17 +228,17 @@ class Profile extends CI_Controller
                             {
                                 echo apiMakeCallback(API_SUCCESS, "Jump To [{$path}]", [], site_url("/{$path}"));
                             }
-                                break;
+                            break;
                             case 'profile/edit' :
                             {
                                 echo apiMakeCallback(API_SUCCESS, "Jump To [{$path}]", [], site_url("/{$path}"));
                             }
-                                break;
+                            break;
                             default:
                             {
                                 echo apiMakeCallback(API_BAD_REQUEST, 'Permintaan Tidak Dapat Dikenali', ['notify' => [['Permintaan Tidak Dapat Dikenali', 'danger']]]);
                             }
-                                break;
+                            break;
                         }
 
                         return;

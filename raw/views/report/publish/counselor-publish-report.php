@@ -34,18 +34,18 @@ if (!isset($counslor))
     $counslor = [];
 }
 
-$suggest = '';
-$profile['school'] = $profile['school'] === null ? '-' : $profile['school'];
-$profile['grade'] = $profile['grade'] === null ? '-' : $profile['grade'];
-$profile['gender'] = $profile['gender'] === 'male' ? 'Laki Laki' : 'Perempuan';
-$profile['address'] = $profile['address'] === null ? '-' : $profile['address'];
-$profile['birthplace'] = $profile['birthplace'] === null ? '-' : $profile['birthplace'];
-$profile['datebirth'] = $profile['datebirth'] === null ? '-' : Carbon::createFromFormat('Y-m-d', $profile['datebirth'])->formatLocalized('%d %B %Y');
-$profile['birth'] = (($profile['birthplace'] === '-') && ($profile['datebirth'] === '-')) ? '-' : (($profile['birthplace'] === '-') ? $profile['datebirth'] : (($profile['datebirth'] === '-') ? $profile['birthplace'] : "{$profile['birthplace']}, {$profile['datebirth']}"));
-$answered['answer_at'] = Carbon::createFromFormat('Y-m-d H:i:s', $answered['answer_at'])->formatLocalized('%d %B %Y %H:%M');
-$now = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now('Asia/Jakarta'))->formatLocalized('%d %B %Y');
-$counselor['school'] = $counselor['school'] === null ? '-' : $counselor['school'];
-$counselor['head'] = $counselor['head'] === null ? '-' : $counselor['head'];
+$suggest                      = '';
+$profile['school']            = $profile['school'] === null ? '-' : $profile['school'];
+$profile['grade']             = $profile['grade'] === null ? '-' : $profile['grade'];
+$profile['gender']            = $profile['gender'] === 'male' ? 'Laki Laki' : 'Perempuan';
+$profile['address']           = $profile['address'] === null ? '-' : $profile['address'];
+$profile['birthplace']        = $profile['birthplace'] === null ? '-' : $profile['birthplace'];
+$profile['datebirth']         = $profile['datebirth'] === null ? '-' : Carbon::createFromFormat('Y-m-d', $profile['datebirth'])->formatLocalized('%d %B %Y');
+$profile['birth']             = (($profile['birthplace'] === '-') && ($profile['datebirth'] === '-')) ? '-' : (($profile['birthplace'] === '-') ? $profile['datebirth'] : (($profile['datebirth'] === '-') ? $profile['birthplace'] : "{$profile['birthplace']}, {$profile['datebirth']}"));
+$answered['answer_at']        = Carbon::createFromFormat('Y-m-d H:i:s', $answered['answer_at'])->formatLocalized('%d %B %Y %H:%M');
+$now                          = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now('Asia/Jakarta'))->formatLocalized('%d %B %Y');
+$counselor['school']          = $counselor['school'] === null ? '-' : $counselor['school'];
+$counselor['head']            = $counselor['head'] === null ? '-' : $counselor['head'];
 $counselor['head_credential'] = $counselor['head_credential'] === null ? '-' : $counselor['head_credential'];
 ?>
 
@@ -225,7 +225,7 @@ $counselor['head_credential'] = $counselor['head_credential'] === null ? '-' : $
                     <tbody>
                     <?php foreach ($grading as $kg => $vg)
                     {
-                        $isBold = $result['value'] >= $vg['interval']['min'] ? ($result['value'] <= $vg['interval']['max'] ? 'bold-normal' : '') : '';
+                        $isBold  = $result['value'] >= $vg['interval']['min'] ? ($result['value'] <= $vg['interval']['max'] ? 'bold-normal' : '') : '';
                         $suggest = strlen($isBold) > 0 ? $vg['suggest'] : $suggest;
                         if ($isBold)
                         {

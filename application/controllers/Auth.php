@@ -6,6 +6,7 @@
  * Email        : syafiq.rezpector@gmail.com
  * Github       : syafiqq
  */
+
 use Carbon\Carbon;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -167,7 +168,7 @@ class Auth extends CI_Controller
             )
             {
                 $_POST['credential'] = strtolower($_POST['credential']);
-                $_POST['role'] = strtolower($_POST['role']);
+                $_POST['role']       = strtolower($_POST['role']);
                 if (($_POST['role'] == 'student') || ($_POST['role'] == 'counselor'))
                 {
                     $this->load->model('mauth', 'auth');
@@ -178,18 +179,18 @@ class Auth extends CI_Controller
                         {
                             $result = $this->auth->findStudentByCredential($_POST['credential']);
                         }
-                            break;
+                        break;
                         case 'counselor' :
                         {
                             $result = $this->auth->findCounselorByCredential($_POST['credential']);
                         }
-                            break;
+                        break;
                     }
                     if (count($result) > 0)
                     {
                         if (password_verify($_POST['password'], $result[0]['password']))
                         {
-                            $_SESSION['user']['auth'] = $result[0];
+                            $_SESSION['user']['auth']         = $result[0];
                             $_SESSION['user']['auth']['role'] = $_POST['role'];
                             echo apiMakeCallback(API_SUCCESS, 'Accepted', ['notify' => [['Login Sukses', 'success']]], site_url('dashboard'));
                         }
@@ -237,7 +238,7 @@ class Auth extends CI_Controller
                 {
                     $this->coupon->deleteByCoupon($_POST['coupon']);
                     $_POST['credential'] = strtolower($_POST['credential']);
-                    $_POST['role'] = strtolower($_POST['role']);
+                    $_POST['role']       = strtolower($_POST['role']);
                     if (($_POST['role'] == 'student') || ($_POST['role'] == 'counselor'))
                     {
                         $_POST['gender'] = strtolower($_POST['gender']);
@@ -260,7 +261,7 @@ class Auth extends CI_Controller
                                         echo apiMakeCallback(API_NOT_ACCEPTABLE, 'NISN Sudah Terdaftar', ['notify' => [['NISN Sudah Terdaftar', 'info']]]);
                                     }
                                 }
-                                    break;
+                                break;
                                 case 'counselor' :
                                 {
                                     $result = $this->auth->findCounselorByCredential($_POST['credential']);
@@ -275,7 +276,7 @@ class Auth extends CI_Controller
                                         echo apiMakeCallback(API_NOT_ACCEPTABLE, 'NIP/NIK Sudah Terdaftar', ['notify' => [['NIP/NIK Sudah Terdaftar', 'info']]]);
                                     }
                                 }
-                                    break;
+                                break;
                             }
                         }
                         else
@@ -316,7 +317,7 @@ class Auth extends CI_Controller
             )
             {
                 $_POST['credential'] = strtolower($_POST['credential']);
-                $_POST['role'] = strtolower($_POST['role']);
+                $_POST['role']       = strtolower($_POST['role']);
                 if (($_POST['role'] == 'student') || ($_POST['role'] == 'counselor'))
                 {
                     $_POST['gender'] = strtolower($_POST['gender']);
@@ -335,7 +336,7 @@ class Auth extends CI_Controller
                                     return;
                                 }
                             }
-                                break;
+                            break;
                             case 'counselor' :
                             {
                                 $account = $this->auth->findCounselorByCredential($_POST['credential']);
@@ -347,8 +348,8 @@ class Auth extends CI_Controller
                                 }
                             }
                         }
-                        $account = $account[0];
-                        $_created = Carbon::createFromFormat('Y-m-d', $_POST['created']);
+                        $account    = $account[0];
+                        $_created   = Carbon::createFromFormat('Y-m-d', $_POST['created']);
                         $_createdDB = Carbon::createFromFormat('Y-m-d H:i:s', $account['on_create']);
                         if (($_POST['name'] === $account['name']) &&
                             ($_POST['gender'] === $account['gender']) &&
@@ -408,7 +409,7 @@ class Auth extends CI_Controller
                 if (count($recovery) > 0)
                 {
                     $this->load->model('mauth', 'auth');
-                    $recovery = $recovery[0];
+                    $recovery          = $recovery[0];
                     $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
                     switch ($recovery['role'])
                     {
@@ -416,7 +417,7 @@ class Auth extends CI_Controller
                         {
                             $this->auth->updatePasswordStudentByID($recovery['user'], $_POST['password']);
                         }
-                            break;
+                        break;
                         case 'counselor' :
                         {
                             $this->auth->updatePasswordCounselorByID($recovery['user'], $_POST['password']);

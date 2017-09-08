@@ -6,6 +6,7 @@
  * Email        : syafiq.rezpector@gmail.com
  * Github       : syafiqq
  */
+
 use Carbon\Carbon;
 
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -55,15 +56,15 @@ class Student extends CI_Controller
             {
                 $this->load->model('mauth', 'auth');
                 $this->load->model('manswer', 'answer');
-                $students = $this->auth->getAllStudent();
+                $students  = $this->auth->getAllStudent();
                 $_answered = $this->answer->getLatestAnsweredAllStudent();
-                $answered = [];
+                $answered  = [];
                 foreach ($_answered as $ans)
                 {
                     $answered[".{$ans['student']}"] = $ans;
                 }
                 $window = 7;
-                $now = Carbon::now('Asia/Jakarta');
+                $now    = Carbon::now('Asia/Jakarta');
                 foreach ($students as $id => $st)
                 {
                     $students[$id]['last_answer'] = isset($answered[".{$st['id']}"]) ? $answered[".{$st['id']}"]['answer_at'] : null;
@@ -93,15 +94,15 @@ class Student extends CI_Controller
                     $this->load->model('minventory', 'inventory');
                     $this->load->model('mauth', 'auth');
 
-                    $profile = $this->auth->findStudentByID($_GET['student']);
-                    $profile = $profile[0];
-                    $_answered = $this->inventory->getAnsweredUser($_GET['student']);
-                    $answered = [];
-                    $result = $this->inventory->getAnsweredResultByUser($_GET['student']);
+                    $profile    = $this->auth->findStudentByID($_GET['student']);
+                    $profile    = $profile[0];
+                    $_answered  = $this->inventory->getAnsweredUser($_GET['student']);
+                    $answered   = [];
+                    $result     = $this->inventory->getAnsweredResultByUser($_GET['student']);
                     $categories = $this->inventory->getCategory();
                     foreach ($_answered as $av)
                     {
-                        $answered[".{$av['id']}"] = $av;
+                        $answered[".{$av['id']}"]             = $av;
                         $answered[".{$av['id']}"]['category'] = [];
                         foreach ($categories as $cv)
                         {
@@ -147,12 +148,12 @@ class Student extends CI_Controller
                 $this->load->model('manswer', 'answer');
                 $this->load->model('mreport', 'report');
                 $_students = $this->auth->getAllAnsweredStudent();
-                $students = [];
-                $answered = $this->answer->getAll();
-                $reports = $this->report->getAll();
+                $students  = [];
+                $answered  = $this->answer->getAll();
+                $reports   = $this->report->getAll();
                 foreach ($_students as $student)
                 {
-                    $student['answered'] = [];
+                    $student['answered']           = [];
                     $students[".{$student['id']}"] = $student;
                 }
                 foreach ($answered as $answer)
@@ -212,17 +213,17 @@ class Student extends CI_Controller
                             {
                                 echo apiMakeCallback(API_SUCCESS, "Jump To [{$path}]", [], site_url("/{$path}"));
                             }
-                                break;
+                            break;
                             case 'student/report' :
                             {
                                 echo apiMakeCallback(API_SUCCESS, "Jump To [{$path}]", [], site_url("/{$path}"));
                             }
-                                break;
+                            break;
                             default:
                             {
                                 echo apiMakeCallback(API_BAD_REQUEST, 'Permintaan Tidak Dapat Dikenali', ['notify' => [['Permintaan Tidak Dapat Dikenali', 'danger']]]);
                             }
-                                break;
+                            break;
                         }
 
                         return;

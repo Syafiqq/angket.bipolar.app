@@ -158,36 +158,36 @@ if (!isset($window))
                                     foreach ($students as $no => $student)
                                     {
                                         ++$no;
-                                        $student['gender'] = $student['gender'] === 'male' ? 'Laki Laki' : 'Perempuan';
-                                        $student['grade'] = $student['grade'] === null ? '-' : $student['grade'];
-                                        $student['school'] = $student['school'] === null ? '-' : $student['school'];
+                                        $student['gender']      = $student['gender'] === 'male' ? 'Laki Laki' : 'Perempuan';
+                                        $student['grade']       = $student['grade'] === null ? '-' : $student['grade'];
+                                        $student['school']      = $student['school'] === null ? '-' : $student['school'];
                                         $student['last_answer'] = $student['last_answer'] === null ? null : $student['last_answer'];
-                                        $_activation = false;
+                                        $_activation            = false;
                                         if ($student['last_answer'] !== null)
                                         {
                                             $student['last_answer'] = Carbon::createFromFormat('Y-m-d H:i:s', $student['last_answer']);
                                             if ((int)$student['is_active'] === 1)
                                             {
                                                 $student['last_answer'] = "<span class=\"label label-success\">{$student['last_answer']->formatLocalized('%d %B %Y %H:%M')}</span>";
-                                                $_activation = false;
+                                                $_activation            = false;
                                             }
                                             else
                                             {
                                                 if ($student['last_answer']->diffInDays($now) <= $window)
                                                 {
-                                                    $_activation = true;
+                                                    $_activation            = true;
                                                     $student['last_answer'] = "<span class=\"label label-warning\">{$student['last_answer']->formatLocalized('%d %B %Y %H:%M')}</span>";
                                                 }
                                                 else
                                                 {
-                                                    $_activation = false;
+                                                    $_activation            = false;
                                                     $student['last_answer'] = "<span class=\"label label-success\">{$student['last_answer']->formatLocalized('%d %B %Y %H:%M')}</span>";
                                                 }
                                             }
                                         }
                                         else
                                         {
-                                            $_activation = false;
+                                            $_activation            = false;
                                             $student['last_answer'] = '<p>Belum Pernah</p>';
                                         }
                                         $activation = (!$_activation) ? '<p>Sudah Memiliki Izin</p>' : "<button data-student-id=\"{$student['id']}\" data-student-action=\"{$activeURL}\" class=\"btn btn-default do-active\" type=\"submit\">Aktifkan</button>";

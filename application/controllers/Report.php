@@ -58,12 +58,12 @@ class Report extends CI_Controller
                     if (count($answered) > 0)
                     {
                         $answered = $answered[0];
-                        $profile = $this->auth->findStudentByID($answered['student']);
-                        $profile = $profile[0];
+                        $profile  = $this->auth->findStudentByID($answered['student']);
+                        $profile  = $profile[0];
                         $this->load->helper('conclusion_interpretation');
                         $grading = interpretCritical();
                         $_result = $this->inventory->getAnsweredResultByID($answered['id']);
-                        $result = ['answer_id' => $answered['id'], 'value' => 0.0];
+                        $result  = ['answer_id' => $answered['id'], 'value' => 0.0];
                         foreach ($_result as $_vr)
                         {
                             $result['value'] += $_vr['value'];
@@ -81,7 +81,7 @@ class Report extends CI_Controller
                     redirect('student/report');
                 }
             }
-                break;
+            break;
             case 'student' :
             {
                 redirect('/inventory/result');
@@ -114,7 +114,7 @@ class Report extends CI_Controller
                         $this->load->helper('conclusion_interpretation');
                         $grading = interpretCritical();
                         $_result = $this->inventory->getAnsweredResultByID($answered['id']);
-                        $result = ['answer_id' => $answered['id'], 'value' => 0.0];
+                        $result  = ['answer_id' => $answered['id'], 'value' => 0.0];
                         foreach ($_result as $_vr)
                         {
                             $result['value'] += $_vr['value'];
@@ -146,6 +146,7 @@ class Report extends CI_Controller
                 case 'student' :
                 {
                     echo apiMakeCallback(API_BAD_REQUEST, 'Permintaan Tidak Dapat Dikenali', ['notify' => [['Permintaan Tidak Dapat Dikenali', 'danger']]]);
+
                     return;
                 }
             }

@@ -6,6 +6,7 @@
  * Email        : syafiq.rezpector@gmail.com
  * Github       : syafiqq
  */
+
 use Carbon\Carbon;
 
 setlocale(LC_TIME, 'id_ID');
@@ -20,8 +21,8 @@ if (!isset($categories))
     $categories = [];
 }
 $profile['birthplace'] = $profile['birthplace'] === null ? '-' : $profile['birthplace'];
-$profile['datebirth'] = $profile['datebirth'] === null ? '-' : Carbon::createFromFormat('Y-m-d', $profile['datebirth'])->formatLocalized('%d %B %Y');
-$profile['birth'] = (($profile['birthplace'] === '-') && ($profile['datebirth'] === '-')) ? '-' : (($profile['birthplace'] === '-') ? $profile['datebirth'] : (($profile['datebirth'] === '-') ? $profile['birthplace'] : "{$profile['birthplace']}, {$profile['datebirth']}"));
+$profile['datebirth']  = $profile['datebirth'] === null ? '-' : Carbon::createFromFormat('Y-m-d', $profile['datebirth'])->formatLocalized('%d %B %Y');
+$profile['birth']      = (($profile['birthplace'] === '-') && ($profile['datebirth'] === '-')) ? '-' : (($profile['birthplace'] === '-') ? $profile['datebirth'] : (($profile['datebirth'] === '-') ? $profile['birthplace'] : "{$profile['birthplace']}, {$profile['datebirth']}"));
 
 ?>
 

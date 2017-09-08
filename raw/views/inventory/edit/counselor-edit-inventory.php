@@ -149,7 +149,7 @@ if (!isset($question))
                                     foreach ($categories as $category)
                                     {
                                         $category['description'] = ucfirst($category['description']);
-                                        $selected = $category['id'] === $question['category'] ? 'selected' : '';
+                                        $selected                = $category['id'] === $question['category'] ? 'selected' : '';
                                         echo "<option value=\"{$category['id']}\" {$selected}>{$category['description']}</option>";
                                     }
                                     ?>
@@ -164,7 +164,7 @@ if (!isset($question))
                                     foreach ($favourables as $favourable)
                                     {
                                         $favourable['description'] = ucfirst($favourable['description']);
-                                        $selected = $favourable['id'] === $question['favour'] ? 'selected' : '';
+                                        $selected                  = $favourable['id'] === $question['favour'] ? 'selected' : '';
                                         echo "<option value=\"{$favourable['id']}\" {$selected}>{$favourable['description']}</option>";
                                     }
                                     ?>

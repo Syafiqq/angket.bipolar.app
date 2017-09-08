@@ -14,12 +14,12 @@ if (!isset($profile))
     $profile = [];
 }
 
-$profile['school'] = $profile['school'] === null ? '' : $profile['school'];
-$profile['grade'] = $profile['grade'] === null ? '' : $profile['grade'];
-$profile['gender'] = $profile['gender'] === 'male' ? 'Laki Laki' : 'Perempuan';
-$profile['address'] = $profile['address'] === null ? '' : $profile['address'];
+$profile['school']     = $profile['school'] === null ? '' : $profile['school'];
+$profile['grade']      = $profile['grade'] === null ? '' : $profile['grade'];
+$profile['gender']     = $profile['gender'] === 'male' ? 'Laki Laki' : 'Perempuan';
+$profile['address']    = $profile['address'] === null ? '' : $profile['address'];
 $profile['birthplace'] = $profile['birthplace'] === null ? '' : $profile['birthplace'];
-$profile['datebirth'] = $profile['datebirth'] === null ? null : $profile['datebirth'];
+$profile['datebirth']  = $profile['datebirth'] === null ? null : $profile['datebirth'];
 ?>
 
 

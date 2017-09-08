@@ -151,9 +151,9 @@ if (!isset($reports))
                                     foreach ($students as $student)
                                     {
                                         ++$no;
-                                        $student['grade'] = $student['grade'] === null ? '-' : $student['grade'];
+                                        $student['grade']  = $student['grade'] === null ? '-' : $student['grade'];
                                         $student['school'] = $student['school'] === null ? '-' : $student['school'];
-                                        $url = site_url('student/detail');
+                                        $url               = site_url('student/detail');
 
                                         echo '<tr>';
                                         echo "<td>{$no}</td>";

@@ -40,8 +40,10 @@
 
 </head>
 
-<body id="page-top" class="index" >
-<div id="skipnav"><a href="#maincontent">Lewati menuju konten utama</a></div>
+<body id="page-top" class="index">
+<div id="skipnav">
+    <a href="#maincontent">Lewati menuju konten utama</a>
+</div>
 
 <!-- Navigation -->
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
@@ -49,7 +51,9 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Navigasi</span> Menu <i class="fa fa-bars"></i>
+                <span class="sr-only">Navigasi</span>
+                Menu
+                <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="#page-top">Inventori Bipolar Siswa</a>
         </div>
@@ -78,7 +82,7 @@
     <div class="container" id="maincontent" tabindex="-1">
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-responsive" src="/assets/baked/freelancer/img/profile.png"  width=300 height=300 alt="">
+                <img class="img-responsive" src="/assets/baked/freelancer/img/profile.png" width=300 height=300 alt="">
                 <div class="intro-text">
                     <h1 class="name">Inventori Bipolar Siswa SMA</h1>
                     <hr class="star-light">
@@ -104,16 +108,18 @@
                 <p>FreGangguan bipolar adalah suatu gangguan suasana hati (mood atau perasaan) yang sangat ekstrim dengan dua kutub, yakni depresi (perasaan sedih berlebihan) dan mania (perasaan bahagia berlebihan) yang mengganggu keadaan individu dan merupakan pemicu upaya bunuh diri. Gangguan ini termasuk gangguan otak yang menyebabkan perubahan perubahan yang tidak biasa pada suasana hati, energi, aktivitas, dan kemampuan untuk melakukan tugas-tugas harian. Perasaan mereka mudah naik dan turun secara berlebihan dibandingkan manusia normal pada umumnya (Franky, 2013) .</p>
             </div>
             <div class="col-lg-4">
-                <p>Herditya (2012) mengatakan hal yang sama bahwa bipolar adalah bagian integral dari psikologi    klinis. Terdapat dua jenis bipolar yaitu mania dan depresi. Gangguan bipolar adalah gangguan mood dengan yang berupa mania (peningkatan mood dan peningkatan aktivitas) dan depresi (penurunan mood dan penurunan aktivitas). Mania ditandai dengan suasana hati gembira, reaktivitas (peningkatan aktivitas), agresivitas, peningkatan aktivitas psikomotor, dan penurunan kebutuhan untuk tidur berlangsung untuk jangka waktu minimal satu minggu.</p>
+                <p>Herditya (2012) mengatakan hal yang sama bahwa bipolar adalah bagian integral dari psikologi klinis. Terdapat dua jenis bipolar yaitu mania dan depresi. Gangguan bipolar adalah gangguan mood dengan yang berupa mania (peningkatan mood dan peningkatan aktivitas) dan depresi (penurunan mood dan penurunan aktivitas). Mania ditandai dengan suasana hati gembira, reaktivitas (peningkatan aktivitas), agresivitas, peningkatan aktivitas psikomotor, dan penurunan kebutuhan untuk tidur berlangsung untuk jangka waktu minimal satu minggu.</p>
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <a href="<?php echo site_url('auth/login')?>" class="btn btn-lg btn-outline">
-                    <i class="fa fa-download" href=""></i> Masuk Aplikasi
+                <a href="<?php echo site_url('auth/login') ?>" class="btn btn-lg btn-outline">
+                    <i class="fa fa-download" href=""></i>
+                    Masuk Aplikasi
                 </a>
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <a href="<?php echo site_url('auth/register')?>" class="btn btn-lg btn-outline">
-                    <i class="fa fa-download" href=""></i> Daftar Akun
+                <a href="<?php echo site_url('auth/register') ?>" class="btn btn-lg btn-outline">
+                    <i class="fa fa-download" href=""></i>
+                    Daftar Akun
                 </a>
             </div>
         </div>
@@ -229,7 +235,9 @@
                 <div class="footer-col col-md-4">
                     <h3>Universitas Negeri Malang</h3>
                     <p>Jl. Semarang No. 5
-                        <br>Malang</p>
+                        <br>
+                       Malang
+                    </p>
                 </div>
                 <div class="footer-col col-md-4">
                     <h3></h3>
@@ -238,7 +246,10 @@
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>About Freelancer</h3>
-                    <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    <p>Freelance is a free to use, open source Bootstrap theme created by
+                        <a href="http://startbootstrap.com">Start Bootstrap</a>
+                       .
+                    </p>
                 </div>
             </div>
         </div>
@@ -280,12 +291,16 @@
                         <p>Lahir di Gresik, 17 Agustus 1959 dan Bertempat tinggal di Perum Permata Hijau D/57. Memiliki Hobby Membaca dan Motto “ Be Your Self”. Telah selesai menempuh Pendidikan S-1, S-2, S-3 jurusan Bimbingan dan Konseling dan telah menjadi dosen dan guru besar Bimbingan dan Konseling Universitas Megeri Malang </a></p>
                         <ul class="list-inline item-details">
                             <li>Email
-                                <strong><a>nur.hidayah.fip@um.ac.id </a>
+                                <strong>
+                                    <a>nur.hidayah.fip@um.ac.id</a>
                                 </strong>
                             </li>
 
                         </ul>
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Tutup
+                        </button>
                     </div>
                 </div>
             </div>
@@ -310,11 +325,15 @@
                         <p>Lahir di Sidoarjo, 17 Juni 1995 dan beralamat di Ds. Janti, Kec. Tarik,Kab.Sidoarjo. Memiliki Hobby Browsing dan Motto Inginkan yang Terbaik dan Lakukan yang Terbaik</p>
                         <ul class="list-inline item-details">
                             <li>Email
-                                <strong><a >Feny.andriyanti95@gmail.com     </a>
+                                <strong>
+                                    <a>Feny.andriyanti95@gmail.com</a>
                                 </strong>
                             </li>
                         </ul>
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Tutup
+                        </button>
                     </div>
                 </div>
             </div>
@@ -339,11 +358,15 @@
                         <p>Lahir di Malang, 06 April 1995 dan beralamat Jl Raya Pang. Sudirman No.74 Bululawang-Malang. Memiliki Hobi berwisata kuliner dan Motto Selalu Berpikir Besar dan Bertindak Mulai Sekarang</p>
                         <ul class="list-inline item-details">
                             <li>Email
-                                <strong><a >amalia_maghfirotul@yahoo.com</a>
+                                <strong>
+                                    <a>amalia_maghfirotul@yahoo.com</a>
                                 </strong>
                             </li>
                         </ul>
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Tutup
+                        </button>
                     </div>
                 </div>
             </div>
@@ -369,11 +392,15 @@
                         </p>
                         <ul class="list-inline item-details">
                             <li>Email
-                                <strong><a href="http://startbootstrap.com">fauziokta92@gmail.com </a>
+                                <strong>
+                                    <a href="http://startbootstrap.com">fauziokta92@gmail.com</a>
                                 </strong>
                             </li>
                         </ul>
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Tutup
+                        </button>
                     </div>
                 </div>
             </div>
@@ -398,11 +425,15 @@
                         <p>Lahir di Malang 30 September 1996 dan beralamat di Jl. Sersan sapar rt 13 rw. 02 kedawung Pojok, Dampit. Memiliki hobi singing dan memiliki motto "Work Hard, Play Hard, Be happy" </p>
                         <ul class="list-inline item-details">
                             <li>Email
-                                <strong><a href="http://startbootstrap.com">mayaenggar30@gmail.com</a>
+                                <strong>
+                                    <a href="http://startbootstrap.com">mayaenggar30@gmail.com</a>
                                 </strong>
                             </li>
                         </ul>
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Tutup
+                        </button>
                     </div>
                 </div>
             </div>
@@ -427,11 +458,15 @@
                         <p>Lahir di Biak Papua 10 Desember 1996 dan beralamatkan di Jl. Timika Indah 2 Perumahan PT.Freeport. Memiliki hobi Traveling dan Motto "Learn From Yesterday, Live For Today, Hope for Tomorrow" </p>
                         <ul class="list-inline item-details">
                             <li>Email
-                                <strong><a href="http://startbootstrap.com">kaniashintia@yahoo.com </a>
+                                <strong>
+                                    <a href="http://startbootstrap.com">kaniashintia@yahoo.com</a>
                                 </strong>
                             </li>
                         </ul>
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Tutup
+                        </button>
                     </div>
                 </div>
             </div>
@@ -456,11 +491,15 @@
                         <p>Lahir di Pasuruan, 16 Desember 1993 dan beralamat di Jl. Apel I No. 449 Bangil, Pasuruan. Memiliki Motto Hidup Bermakna seperti Larry. Telah menyelesaikan Pendidikan S-1 Teknik Informatika Universitas Brawijaya</p>
                         <ul class="list-inline item-details">
                             <li>Email
-                                <strong><a href="http://startbootstrap.com"> id.muhammad.syafiq@gmail.com</a>
+                                <strong>
+                                    <a href="http://startbootstrap.com"> id.muhammad.syafiq@gmail.com</a>
                                 </strong>
                             </li>
                         </ul>
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Tutup
+                        </button>
                     </div>
                 </div>
             </div>
@@ -485,11 +524,15 @@
                         <p>Lahir di Biak Papua 10 Desember 1996 dan beralamatkan di Jl. Timika Indah 2 Perumahan PT.Freeport. Memiliki hobi Traveling dan Motto "Learn From Yesterday, Live For Today, Hope for Tomorrow" </p>
                         <ul class="list-inline item-details">
                             <li>Email
-                                <strong><a href="http://startbootstrap.com">husnihanafi.19@gmail.com</a>
+                                <strong>
+                                    <a href="http://startbootstrap.com">husnihanafi.19@gmail.com</a>
                                 </strong>
                             </li>
                         </ul>
-                        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Tutup
+                        </button>
                     </div>
                 </div>
             </div>
@@ -511,22 +554,31 @@
                         <h2>Project Title</h2>
                         <hr class="star-primary">
                         <img src="/assets/baked/freelancer/img/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                        <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                        <p>Use this area of the page to describe your project. The icon above is part of a free icon set by
+                            <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>
+                           . On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+                        </p>
                         <ul class="list-inline item-details">
                             <li>Client:
-                                <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <strong>
+                                    <a href="http://startbootstrap.com">Start Bootstrap</a>
                                 </strong>
                             </li>
                             <li>Date:
-                                <strong><a href="http://startbootstrap.com">April 2014</a>
+                                <strong>
+                                    <a href="http://startbootstrap.com">April 2014</a>
                                 </strong>
                             </li>
                             <li>Service:
-                                <strong><a href="http://startbootstrap.com">Web Development</a>
+                                <strong>
+                                    <a href="http://startbootstrap.com">Web Development</a>
                                 </strong>
                             </li>
                         </ul>
-                        <button id="btnSubmit" type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        <button id="btnSubmit" type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Close
+                        </button>
                     </div>
                 </div>
             </div>
