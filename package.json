@@ -1,9 +1,10 @@
 {
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.0.4",
+    "gulp-clean-css": "^3.9.0",
     "gulp-concat-css": "^2.3.0",
     "gulp-htmlmin": "^3.0.0",
+    "gulp-remove-files": "0.0.3",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.1.2",
     "gulp-using": "^0.1.1",
