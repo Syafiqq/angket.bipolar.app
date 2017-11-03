@@ -86,7 +86,7 @@
                 <div class="intro-text">
                     <h1 class="name">Inventori Bipolar Siswa SMA</h1>
                     <hr class="star-light">
-                    <span class="skills">Aplikasi Asesmen Non-Tes Bimbingan dan Konseling</span>
+                    <span class="skills">Software Asesmen Non-Tes Bimbingan dan Konseling</span>
                 </div>
             </div>
         </div>
@@ -113,7 +113,7 @@
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <a href="<?php echo site_url('auth/login') ?>" class="btn btn-lg btn-outline">
                     <i class="fa fa-download" href=""></i>
-                    Masuk Aplikasi
+                    Masuk Software
                 </a>
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
